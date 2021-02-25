@@ -4,6 +4,10 @@
 Simple program to process and provide statistics to every valid files inside a directory inputted by user on console.
 At the moment, only plaintext file format is catered as per requirement.
 
+Please, note below in comparison logic:
++ case-insensitive comparison e.g. Word = word
++ disregards invalid characters usually at the end of words e.g. word? = word
+
 ### To run
 for mac:
 - ./mvnw package
