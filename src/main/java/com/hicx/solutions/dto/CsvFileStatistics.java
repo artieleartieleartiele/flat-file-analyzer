@@ -18,7 +18,7 @@ public class CsvFileStatistics extends FileStatistics {
 
     @Override
     public String toString() {
-        return "PlainTextFileStatistics{" +
+        return "CsvFileStatistics{" +
                 "filename='" + super.getFilename() + '\'' +
                 ", wordCount=" + super.getWordCount() +
                 ", dotCount=" + super.getDotCount() +
