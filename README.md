@@ -53,3 +53,4 @@ CsvFileStatisticsService (Child class of FileStatistics)
 ### For enhancement
 - Given enough time, would suggest to log all action in a db with suggested columns:
 id, filename, isSuccessful, trace, dateTimeCreated where <b>trace</b> is first 100 character of the exception stack trace when isSuccessful=0
+- In line with above, creating custom exceptions would also be recommended for a clearer description of what went wrong.
