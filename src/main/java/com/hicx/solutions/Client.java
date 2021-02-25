@@ -42,6 +42,8 @@ public class Client {
                         FileStatisticsService fileService = factory.getFileStatisticsService(file);
                         if (ObjectUtils.isEmpty(fileService)) continue;
                         FileStatistics stats = fileService.process(file);
+
+                        if (processedDir.exists()) FileUtils.cleanDirectory(processedDir);
                         FileUtils.moveFileToDirectory(file, processedDir, true);
                         System.out.println("[Statistics]---" + stats.toString());
                     }
