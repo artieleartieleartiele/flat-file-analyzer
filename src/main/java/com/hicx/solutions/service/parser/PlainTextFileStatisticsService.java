@@ -3,7 +3,9 @@ package com.hicx.solutions.service.parser;
 import com.hicx.solutions.dto.FileStatistics;
 import com.hicx.solutions.dto.PlainTextFileStatistics;
 import com.hicx.solutions.service.FileStatisticsService;
+import lombok.NoArgsConstructor;
 import org.apache.commons.io.FileUtils;
+import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.tuple.Pair;
 
@@ -12,32 +14,42 @@ import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
+import static com.hicx.solutions.constant.constants.*;
+
+@NoArgsConstructor
 public class PlainTextFileStatisticsService implements FileStatisticsService {
-    private static final String SEPARATOR_SPACE = " ";
-    private static final String REPLACE_NOTHING = "";
-
     @Override
     public FileStatistics process(File file) throws IOException {
         List<String> lines = FileUtils.readLines(file, StandardCharsets.UTF_8);
         int wordCount = 0;
         int dotCount = 0;
 
-        List<String> wordDump = new ArrayList<>();
+        List<String> dirtyWords = new ArrayList<>();
+        List<String> cleanWords = new ArrayList<>();
         for (String line : lines) {
-            String charPattern = ".";
+            String charPattern = CHARACTER_PATTERN_DOT;
             dotCount = getCharCount(dotCount, line, charPattern);
 
             line = StringUtils.replace(line, charPattern, REPLACE_NOTHING);
             String[] words = StringUtils.split(line.trim(), SEPARATOR_SPACE);
             wordCount = getWordCount(wordCount, words);
-            wordDump.addAll(Arrays.asList(words));
+            dirtyWords.addAll(Arrays.asList(words));
         }
+
+        for (String dirty : dirtyWords) {
+            cleanWords.add(
+                Arrays.stream(Arrays.stream(INVALID_CHARACTERS).toArray())
+                .map(invalidChar -> StringUtils.replace(dirty, (String) invalidChar, REPLACE_NOTHING))
+                .iterator().next());
+        }
+
         FileStatistics statistics = new PlainTextFileStatistics();
         statistics.setFilename(file.getName());
         statistics.setDotCount(dotCount);
         statistics.setWordCount(wordCount);
-        statistics.setPopularWords(getPopularWords(wordDump));
+        statistics.setPopularWords(getPopularWords(cleanWords));
         return statistics;
     }
 
@@ -52,13 +64,10 @@ public class PlainTextFileStatisticsService implements FileStatisticsService {
 
     private Pair<List<String>, Integer> getPopularWords(List<String> lines) {
         Map<String,Integer> popWords = new HashMap<>();
-        Set<String> unique = lines.stream().map(String::toLowerCase).collect(Collectors.toSet());
-        String joined = lines.stream().map(String::toLowerCase).collect(Collectors.joining());
-
-        unique.forEach(word -> {
-            int count = StringUtils.countMatches(joined, word);
-            popWords.put(word,count);
-        });
+        lines.stream()
+            .map(String::toLowerCase)
+            .collect(Collectors.groupingBy(s -> s))
+            .forEach((k, v) -> popWords.put(k, v.size()));
 
         Optional<Map.Entry<String, Integer>> maxEntry = popWords.entrySet().stream().max(Map.Entry.comparingByValue());
 
