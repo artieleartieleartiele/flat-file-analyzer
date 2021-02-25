@@ -18,6 +18,7 @@ or you may simply run the main class inside your local IDE.
 
 ### UML Class Diagram
 ![](./diagram/solutions.png)
+*UML generated using IntelliJ*
 
 
 Client

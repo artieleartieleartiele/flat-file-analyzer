@@ -3,46 +3,125 @@
   <ID>JAVA</ID>
   <OriginalElement>com.hicx.solutions</OriginalElement>
   <nodes>
-    <node x="519.9010416666666" y="997.0">com.hicx.solutions.service.parser.FileParserFactory</node>
-    <node x="442.47135416666663" y="0.0">com.hicx.solutions.dto.FileStatistics</node>
-    <node x="835.4791666666666" y="533.5">com.hicx.solutions.dto.PlainTextFileStatistics</node>
-    <node x="644.4791666666666" y="782.0">com.hicx.solutions.service.parser.PlainTextFileStatisticsService</node>
-    <node x="0.0" y="500.0">com.hicx.solutions.dto.CsvFileStatistics</node>
-    <node x="233.17447916666663" y="837.5">com.hicx.solutions.service.parser.CsvFileStatisticsService</node>
-    <node x="558.1744791666666" y="1146.0">com.hicx.solutions.Client</node>
-    <node x="450.49999999999994" y="589.0">com.hicx.solutions.service.FileStatisticsService</node>
+    <node x="831.7095588235294" y="975.0">com.hicx.solutions.service.parser.FileParserFactory</node>
+    <node x="575.125" y="0.0">com.hicx.solutions.dto.FileStatistics</node>
+    <node x="10.5" y="533.5">com.hicx.solutions.dto.PlainTextFileStatistics</node>
+    <node x="381.88602941176475" y="782.0">com.hicx.solutions.service.parser.PlainTextFileStatisticsService</node>
+    <node x="423.5" y="556.0">com.hicx.solutions.constant.constants</node>
+    <node x="1060.3455882352941" y="815.0">com.hicx.solutions.service.parser.CsvFileStatisticsService</node>
+    <node x="976.2095588235294" y="500.0">com.hicx.solutions.dto.CsvFileStatistics</node>
+    <node x="740.2095588235294" y="589.0">com.hicx.solutions.service.FileStatisticsService</node>
+    <node x="730.5955882352941" y="1124.0">com.hicx.solutions.Client</node>
   </nodes>
   <notes />
   <edges>
-    <edge source="com.hicx.solutions.dto.CsvFileStatistics" target="com.hicx.solutions.dto.FileStatistics">
-      <point x="-96.0" y="-116.0" />
-      <point x="96.0" y="460.0" />
-      <point x="464.09635416666663" y="460.0" />
+    <edge source="com.hicx.solutions.Client" target="com.hicx.solutions.service.FileStatisticsService">
+      <point x="-21.125" y="-60.5" />
+      <point x="793.75" y="762.0" />
+      <point x="821.2095588235294" y="762.0" />
+      <point x="-27.0" y="27.0" />
+    </edge>
+    <edge source="com.hicx.solutions.service.parser.FileParserFactory" target="com.hicx.solutions.service.FileStatisticsService">
+      <point x="0.0" y="-49.5" />
+      <point x="980.2095588235294" y="950.0" />
+      <point x="931.7205882352941" y="950.0" />
+      <point x="931.7205882352941" y="762.0" />
+      <point x="875.2095588235294" y="762.0" />
+      <point x="27.0" y="27.0" />
+    </edge>
+    <edge source="com.hicx.solutions.Client" target="com.hicx.solutions.dto.FileStatistics">
+      <point x="-63.375" y="-60.5" />
+      <point x="751.7205882352941" y="1104.0" />
+      <point x="0.0" y="1104.0" />
+      <point x="0.0" y="450.0" />
+      <point x="596.75" y="450.0" />
       <point x="-151.375" y="215.0" />
     </edge>
+    <edge source="com.hicx.solutions.Client" target="com.hicx.solutions.service.parser.FileParserFactory">
+      <point x="21.125" y="-60.5" />
+      <point x="836.2205882352941" y="1094.0" />
+      <point x="905.9595588235294" y="1094.0" />
+      <point x="-74.25" y="49.5" />
+    </edge>
+    <edge source="com.hicx.solutions.service.parser.CsvFileStatisticsService" target="com.hicx.solutions.dto.CsvFileStatistics">
+      <point x="0.0" y="-38.5" />
+      <point x="1180.3455882352941" y="762.0" />
+      <point x="1168.2095588235293" y="762.0" />
+      <point x="0.0" y="116.0" />
+    </edge>
+    <edge source="com.hicx.solutions.service.parser.FileParserFactory" target="com.hicx.solutions.service.parser.PlainTextFileStatisticsService">
+      <point x="-99.0" y="-49.5" />
+      <point x="881.2095588235294" y="950.0" />
+      <point x="562.3860294117648" y="950.0" />
+      <point x="0.0" y="71.5" />
+    </edge>
+    <edge source="com.hicx.solutions.dto.CsvFileStatistics" target="com.hicx.solutions.dto.FileStatistics">
+      <point x="-96.0" y="-116.0" />
+      <point x="1072.2095588235293" y="470.0" />
+      <point x="813.0" y="470.0" />
+      <point x="64.875" y="215.0" />
+    </edge>
     <edge source="com.hicx.solutions.service.parser.CsvFileStatisticsService" target="com.hicx.solutions.service.FileStatisticsService">
-      <point x="80.0" y="-27.0" />
-      <point x="433.17447916666663" y="757.0" />
-      <point x="477.49999999999994" y="757.0" />
-      <point x="-81.0" y="27.0" />
+      <point x="-80.0" y="-38.5" />
+      <point x="1100.3455882352941" y="752.0" />
+      <point x="929.2095588235294" y="752.0" />
+      <point x="81.0" y="27.0" />
+    </edge>
+    <edge source="com.hicx.solutions.service.parser.PlainTextFileStatisticsService" target="com.hicx.solutions.dto.PlainTextFileStatistics">
+      <point x="-135.375" y="-71.5" />
+      <point x="427.01102941176475" y="762.0" />
+      <point x="207.0" y="762.0" />
+      <point x="0.0" y="82.5" />
+    </edge>
+    <edge source="com.hicx.solutions.service.parser.CsvFileStatisticsService" target="com.hicx.solutions.dto.FileStatistics">
+      <point x="80.0" y="-38.5" />
+      <point x="1260.3455882352941" y="762.0" />
+      <point x="1370.7095588235293" y="762.0" />
+      <point x="1370.7095588235293" y="450.0" />
+      <point x="899.5" y="450.0" />
+      <point x="151.375" y="215.0" />
     </edge>
     <edge source="com.hicx.solutions.dto.PlainTextFileStatistics" target="com.hicx.solutions.dto.FileStatistics">
       <point x="98.25" y="-82.5" />
-      <point x="1130.2291666666665" y="460.0" />
-      <point x="723.5963541666666" y="460.0" />
-      <point x="108.125" y="215.0" />
+      <point x="305.25" y="470.0" />
+      <point x="683.25" y="470.0" />
+      <point x="-64.875" y="215.0" />
+    </edge>
+    <edge source="com.hicx.solutions.service.parser.PlainTextFileStatisticsService" target="com.hicx.solutions.dto.FileStatistics">
+      <point x="45.125" y="-71.5" />
+      <point x="607.5110294117648" y="762.0" />
+      <point x="666.0" y="762.0" />
+      <point x="666.0" y="480.0" />
+      <point x="726.5" y="480.0" />
+      <point x="-21.625" y="215.0" />
+    </edge>
+    <edge source="com.hicx.solutions.service.FileStatisticsService" target="com.hicx.solutions.dto.FileStatistics">
+      <point x="0.0" y="-27.0" />
+      <point x="848.2095588235294" y="480.0" />
+      <point x="769.75" y="480.0" />
+      <point x="21.625" y="215.0" />
+    </edge>
+    <edge source="com.hicx.solutions.service.parser.PlainTextFileStatisticsService" target="com.hicx.solutions.constant.constants">
+      <point x="-45.125" y="-71.5" />
+      <point x="517.2610294117648" y="762.0" />
+      <point x="539.5" y="762.0" />
+      <point x="0.0" y="60.0" />
+    </edge>
+    <edge source="com.hicx.solutions.service.parser.FileParserFactory" target="com.hicx.solutions.service.parser.CsvFileStatisticsService">
+      <point x="99.0" y="-49.5" />
+      <point x="1079.2095588235293" y="950.0" />
+      <point x="1180.3455882352941" y="950.0" />
+      <point x="0.0" y="38.5" />
     </edge>
     <edge source="com.hicx.solutions.service.parser.PlainTextFileStatisticsService" target="com.hicx.solutions.service.FileStatisticsService">
-      <point x="-120.33333333333331" y="-82.5" />
-      <point x="704.6458333333333" y="757.0" />
-      <point x="639.5" y="757.0" />
-      <point x="81.0" y="27.0" />
+      <point x="135.375" y="-71.5" />
+      <point x="697.7610294117648" y="762.0" />
+      <point x="767.2095588235294" y="762.0" />
+      <point x="-81.0" y="27.0" />
     </edge>
   </edges>
-  <settings layout="Hierarchic Group" zoom="0.5485625485625486" x="614.5" y="633.5" />
-  <SelectedNodes>
-    <node>com.hicx.solutions.service.parser.PlainTextFileStatisticsService</node>
-  </SelectedNodes>
+  <settings layout="Hierarchic Group" zoom="0.558102766798419" x="685.5" y="622.5" />
+  <SelectedNodes />
   <Categories>
     <Category>Fields</Category>
     <Category>Constructors</Category>
